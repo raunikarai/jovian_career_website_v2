@@ -22,7 +22,7 @@
 <body>
     <div class="container">
         <h1 class="text-center mt-3 mb-3"> {{company_name}} careers </h1>
-        <img class="img-fluid" id="banner" src="http://127.0.0.1:5000/static/banner.jpg" height="320" alt="">
+        <img class="img-fluid" id="banner" src="{{ url_for('static', filename='banner.jpg') }}" alt="Banner" height="320" alt="">
         <h2 class="text-center mt-3 mb-2">About jovian</h2>
         <p class="lead">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
             pellentesque sem
