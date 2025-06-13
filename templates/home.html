@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            jovian careers 
-        </title>
-        <style>
-            h1{
-                font-size: 60px;
-                font-family: roboto;
-                font-weight: normal;
-                color: rgb(50,50,50);
-                text-align: center;
-            }
-            #banner{
-                height: 360px;
-                width: 100%;
-                object-fit: cover;
-            }
-            h2{
-                font-size: 40px;
-                font-family: roboto;
-                font-weight: normal;
-                color: rgb(100,100,100);
-                text-align: center;
-            }
-            .bodytext{
-                font-family: roboto;
-                color: rgb(80,80,80);
-            }
-            #container{
-                max-width: 800px;
-                margin: 0 auto; /*to center something quickly*/
-            }
-        </style>
 
-    </head>
-    <body>
-        <div id="container">
-        <h1> jovian careers </h1> 
-        <img id="banner" src="http://127.0.0.1:5000/static/banner.jpg" height="320" alt="">
-        <h2>About jovian</h2>
-        <p class="bodytext">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-        <h2>job openings</h2>
-        <p class="bodytext">TODO - show the jobs here </p>
-        <div style="text-align: center;">
-            <button>contact us </button>
-            <p>copyright 2025 jovian</p>
+<head>
+    <title>
+        jovian careers
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        #banner {
+            height: 360px;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-3 mb-3"> {{company_name}} careers </h1>
+        <img class="img-fluid" id="banner" src="http://127.0.0.1:5000/static/banner.jpg" height="320" alt="">
+        <h2 class="text-center mt-3 mb-2">About jovian</h2>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
+            pellentesque sem
+            placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar
+            vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+            posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+            inceptos himenaeos.
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem
+            placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar
+            vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc
+            posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra
+            inceptos himenaeos.</p>
+        <h2 class="text-center mt-2 mb-3">Open positions</h2>
+        <div>
+            {% for job in jobs%}
+             {%include 'jobitem.html'%}
+            {% endfor %}
         </div>
+        <div>
+            <div class="text-center"><button class="btn btn-primary btn-sm mb-3">contact us </button></div>
+            <p class="text-center">copyright 2025 jovian</p>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
