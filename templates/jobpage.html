@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        {{job.TITLE}} - jovian careers
+    </title>
+    {% include 'bootstrap.html'%}
+    {% include 'banner.html'%}
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-3 mb-0"> Jovian careers </h1>
+        {%include 'navbar.html' %}
+        <h4>{{job.TITLE}}</h4>
+        <p class="lead">{{job.LOCATION}}</p>
+        <h4>Roles and Responsibility</h4>
+        <ul>
+            {% for line in job.RESPONSIBILITY.split('\n') %}
+            <li>{{ line }}</li>
+            {% endfor %}
+        </ul>
+        <h4>Requirements</h4>
+        <ol>
+            {% for line in job.REQUIREMENT.split('\n')%}
+            <li>{{line}}</li>
+            {% endfor %}
+        </ol>
+
+        <h4>Job Salary</h4>
+        <p>{{job.CURRENCY}}{{job.SALARY}}</p>
+        {% include 'footer.html'%}
+    </div>
+</body>
+
+
+</html>
